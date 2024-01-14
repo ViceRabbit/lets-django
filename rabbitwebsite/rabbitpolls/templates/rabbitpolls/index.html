@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>polls of a rabbit</title>
+    </head>
+    <body>
+        <header>
+            <h1>Rabbit Polls</h1>
+        </header>
+        <main>
+            <article>
+                {% if latestquestions %}
+                    <ul>
+                        {% for h in latestquestions %}
+                            <li><a href="/polls/{{ h.id }}">{{ h.questiontext }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>no rabbit polls rn</p>
+                {% endif %}
+            </article>
+        </main>
+    </body>
+</html>
